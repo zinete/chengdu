@@ -4,13 +4,18 @@
       <img :src="bg_img" alt="" class="bg_img" />
       <!-- title -->
       <div class="title_list_box">
-        <!-- 灵芝栽培技术 -->
         <div
           class="title_list img_zs2_body"
           v-for="(item, index) in videos"
           :key="item.id"
         >
           <div>
+            <img
+              src="../static/bg/yun.png"
+              alt=""
+              class="yun_bg"
+              :style="index == 1 ? ' left: -50px' : 'right: -50px'"
+            />
             <img
               :src="item.cityIcon"
               alt=""
@@ -25,6 +30,9 @@
               class="top_icon"
               :style="index == 1 ? 'right: 0' : 'left: 0'"
             />
+
+            <!--  yun-->
+
             <div class="title_icon_new">
               <!-- <img src="../static/bg/img_title_bg.png" alt="" /> -->
 
@@ -120,7 +128,6 @@ export default {
 
     initVideo() {
       for (let i of this.videos) {
-        console.log(i, "data[0].videodata[0].video");
         let config = {
           playbackRates: [1.0, 2.0, 3.0], //播放速度
           autoplay: false, //如果true,浏览器准备好时开始回放。
@@ -167,26 +174,31 @@ export default {
 .app {
   background: url("/bg/bg_cover.png") repeat;
   background-size: 100% 100%;
+  overflow: hidden;
 }
 .img_zs1_body {
   position: relative;
   margin-bottom: 180px !important;
 }
 
-.top_bar::after {
-  content: "";
+.yun_bg {
+  position: absolute;
+
+  bottom: -200px;
+  width: 300px;
+  /* z-index: 9900; */
+  /* z-index: -1;s */
 }
 
-.bg_box {
-  /* position: relative; */
-  /* min-height: 400px; */
+.top_bar::after {
+  content: "";
 }
 
 .cityIcon {
   width: 500px;
 
   position: absolute;
-  top: -280px;
+  top: -300px;
 
   z-index: 99000;
 }
@@ -244,10 +256,7 @@ export default {
   width: 100%;
   height: 100%;
 }
-.title_list_box {
-  /* background: url("/imgs/bg_cover.png") repeat; */
-  /* overflow: hidden; */
-}
+
 .video_list_last {
   margin-top: 0px !important;
 }
@@ -306,7 +315,7 @@ export default {
 }
 
 .title_icon_new {
-  top: -100px;
+  top: -112px;
   width: 100%;
   z-index: 888;
   left: 0px;
