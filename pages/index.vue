@@ -403,11 +403,11 @@ export default {
 .title_icon_text_en {
   position: absolute;
   font-weight: 600;
-  font-size: 40px;
+  font-size: 38px;
   color: #c6432a;
   text-align: center;
   display: block;
-  width: 75%;
+  width: 70%;
 }
 .taiji_des {
   margin-top: 60px;
@@ -417,6 +417,9 @@ export default {
 .taiji_des_two {
   margin-top: 0px;
   padding: 0px 10px;
+}
+.taiji_des_two:last-child {
+  margin-top: 32px;
 }
 .taiji_des_two,
 .taiji_des p {
