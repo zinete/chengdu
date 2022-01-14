@@ -19,9 +19,12 @@
             <img
               :src="item.cityIcon"
               alt=""
+              :class="
+                index == 2 && $i18n.locale == 'en' ? 'cityIconen' : 'cityIcon'
+              "
               :style="index == 1 ? 'left: 0' : 'right: 0'"
-              class="cityIcon"
             />
+            <!-- cityIcon -->
           </div>
           <div class="title_list_boder_l">
             <img
@@ -33,10 +36,23 @@
 
             <!--  yun-->
 
-            <div class="title_icon_new">
+            <div
+              :class="
+                index == 2 && $i18n.locale == 'en'
+                  ? 'title_icon_new_en'
+                  : 'title_icon_new'
+              "
+            >
               <!-- <img src="../static/bg/img_title_bg.png" alt="" /> -->
-
-              <span class="title_icon_text_last">{{ $t(item.title) }}</span>
+              <!-- title_icon_text_en -->
+              <span
+                :class="
+                  index == 2 && $i18n.locale == 'en'
+                    ? 'title_icon_text_en'
+                    : 'title_icon_text_last'
+                "
+                >{{ $t(item.title) }}</span
+              >
             </div>
             <div class="video_list">
               <div class="taiji_des_two">
@@ -202,6 +218,15 @@ export default {
 
   z-index: 99000;
 }
+
+.cityIconen {
+  width: 500px;
+
+  position: absolute;
+  top: -330px;
+
+  z-index: 99000;
+}
 .top_icon {
   width: 140px;
 
@@ -329,6 +354,25 @@ export default {
   background: url("/bg/img_title_bg.png") no-repeat center;
   background-size: contain;
 }
+.title_icon_new_en {
+  top: -162px;
+  width: 100%;
+  z-index: 888;
+  left: 0px;
+  right: 0px;
+  height: 310px;
+  position: absolute;
+  flex-direction: column;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: url("/bg/title_bg.png") no-repeat center;
+  background-size: contain;
+}
+.title_icon_new_en img {
+  width: 80%;
+  height: 100%;
+}
 .title_icon_new img {
   width: 85%;
   height: 100%;
@@ -353,6 +397,16 @@ export default {
   text-align: center;
   display: block;
 
+  width: 75%;
+}
+
+.title_icon_text_en {
+  position: absolute;
+  font-weight: 600;
+  font-size: 40px;
+  color: #c6432a;
+  text-align: center;
+  display: block;
   width: 75%;
 }
 .taiji_des {

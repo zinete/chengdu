@@ -9,7 +9,7 @@ export default {
 
         {
           cityIcon: "../cn/chengdu_cn.png",
-          cover: "../cn/cn01.png",
+          cover: "../cn/chengdu_fm.png",
           key: 2,
           local: "../cn/cn01.mp4",
           title: "d1",
@@ -18,7 +18,7 @@ export default {
         },
         {
           cityIcon: "../cn/zigong_cn.png",
-          cover: "../cn/cn02.png",
+          cover: "../cn/zigong_fm.png",
           key: 3,
           title: "d2",
           local: "../cn/cn02.mp4",
@@ -27,7 +27,7 @@ export default {
         },
         {
           cityIcon: "../cn/langzhong_cn.png",
-          cover: "../cn/cn03.png",
+          cover: "../cn/langzhong_fm.png",
           title: "d3",
           key: 4,
           local: "../cn/cn03.mp4",
@@ -43,7 +43,7 @@ export default {
       video: [
         {
           cityIcon: "../en/chengdu_en.png",
-          cover: "../en/en01.png",
+          cover: "../en/chengdu_fm.png",
           key: 2,
           title: "d1",
           lang: "title1",
@@ -52,7 +52,7 @@ export default {
         },
         {
           cityIcon: "../en/zigong_en.png",
-          cover: "../en/en02.png",
+          cover: "../en/zigong_fm.png",
           key: 3,
           title: "d2",
           lang: "title2",
@@ -61,7 +61,7 @@ export default {
         },
         {
           cityIcon: "../en/langzhong_en.png",
-          cover: "../en/en03.png",
+          cover: "../en/langzhong_fm.png",
           key: 4,
           title: "d3",
           lang: "title3",
