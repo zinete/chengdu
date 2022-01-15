@@ -54,8 +54,15 @@
                 >{{ $t(item.title) }}</span
               >
             </div>
+            <!-- taiji_des_two_en -->
             <div class="video_list">
-              <div class="taiji_des_two">
+              <div
+                :class="
+                  index == 2 && $i18n.locale == 'en'
+                    ? 'taiji_des_two_en'
+                    : 'taiji_des_two'
+                "
+              >
                 {{ $t(item.lang) }}
               </div>
               <div>
@@ -64,7 +71,6 @@
                     @play="onPlayerPlay($event, index)"
                     class="video-player vjs-custom-skin vjs-big-play-centered"
                     ref="videoPlayer"
-                    :playsinline="true"
                     :options="playerOptions[index]"
                   ></video-player>
                 </div>
@@ -136,7 +142,7 @@ export default {
       );
     },
     onPlayerPlay(player, index) {
-      var that = this.$refs.videoPlayer;
+      let that = this.$refs.videoPlayer;
       for (let i = 0; i < that.length; i++) {
         if (i != index) that[i].player.pause();
       }
@@ -149,7 +155,6 @@ export default {
           autoplay: false, //如果true,浏览器准备好时开始回放。
           muted: false, // 默认情况下将会消除任何音频。
           loop: false, // 导致视频一结束就重新开始。
-          preload: "none", // 建议浏览器在<video>加载元素后是否应该开始下载视频数据。auto浏览器选择最佳行为,立即开始加载视频（如果浏览器支持）
           language: "zh-CN",
           aspectRatio: "16:9", // 将播放器置于流畅模式，并在计算播放器的动态大小时使用该值。值应该代表一个比例 - 用冒号分隔的两个数字（例如"16:9"或"4:3"）
           fluid: true, // 当true时，Video.js player将拥有流体大小。换句话说，它将按比例缩放以适应其容器。
@@ -414,15 +419,25 @@ export default {
   padding: 0px 10px;
 }
 
-.taiji_des_two {
-  margin-top: 0px;
+.taiji_des_two_en {
+  display: block;
   padding: 0px 10px;
+  line-height: 63px;
+  font-size: 40px;
+  font-weight: normal;
+  color: #c6432a;
+  margin-top: 80px !important;
+  margin: 40px 32px;
+  text-align: justify;
+  text-indent: 60px;
+  word-break: normal;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
-.taiji_des_two:last-child {
-  margin-top: 32px;
-}
-.taiji_des_two,
-.taiji_des p {
+
+.taiji_des_two {
+  display: block;
+  padding: 0px 10px;
   line-height: 63px;
   font-size: 40px;
   font-weight: normal;
