@@ -1,7 +1,9 @@
 import { I18N } from "./config/lang";
 
 export default {
-  mode: "spa",
+
+  target: 'static',
+  ssr: false,
   /*
    ** Headers of the page
    */
@@ -21,7 +23,7 @@ export default {
   /*
    ** Customize the progress-bar color
    */
-  loading: { color: "#fff" },
+  loading: { color: "#f53f3f" },
   /*
    ** Global CSS
    */
